@@ -13,24 +13,41 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
 
+# Initialize the main Tkinter window
 root = Tk()
+root.geometry("1200x600")
+root.title("Best Journey for You")
+
+# Initialize frames for different sections
 formap = Frame(root)
 forlogin = Frame(root)
-frame1=Frame(root)
+frame1 = Frame(root)
 book = Frame(root)
-map1=Frame(root)
-map2=Frame(root)
-root.geometry("1200x600")
-root.title("Best Joureny for You")
+map1 = Frame(root)
+map2 = Frame(root)
+
+# Load data from the data module
+api1 = data.apikeys1
+api2 = data.apikeys2
+city_list = data.datalist
+
 font1 = font.Font(family='Georgia', size='18', weight='bold')
 api1=data.apikeys1
 api2=data.apikeys2
-# city_list=data.datalist
-city_list=data.datalist1
-# print(city_list)
+
 myFont = font.Font(family='Helvetica')
 
 def choise():
+     """
+    Function to display the choice screen where the user can choose between a direct flight or a flight with more than one station.
+    
+    This function sets up the frame1 window with a background image and two buttons for the user's choice.
+    
+    Input: None
+    
+    Output: None, but it switches the displayed frame to frame1 and hides other frames (forlogin, formap, map2).
+    """
+    
     label1 = Label(frame1,image=photo2)
     label1.pack()
     btn2 = Button(frame1, text="Direct Flight",font=myFont, command=to_map,fg="red",relief=SUNKEN).place(x=500,y=275)
