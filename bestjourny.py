@@ -38,7 +38,7 @@ api2=data.apikeys2
 myFont = font.Font(family='Helvetica')
 
 def choise():
-     """
+    """
     Function to display the choice screen where the user can choose between a direct flight or a flight with more than one station.
     
     This function sets up the frame1 window with a background image and two buttons for the user's choice.
@@ -48,18 +48,20 @@ def choise():
     Output: None, but it switches the displayed frame to frame1 and hides other frames (forlogin, formap, map2).
     """
     
-    label1 = Label(frame1,image=photo2)
+    label1 = Label(frame1, image=photo2)
     label1.pack()
-    btn2 = Button(frame1, text="Direct Flight",font=myFont, command=to_map,fg="red",relief=SUNKEN).place(x=500,y=275)
-    btn3 = Button(frame1, text="More than onle station",font=myFont, command=to_map1,fg="red",relief=SUNKEN).place(x=500,y=310)
-    # btn2.pack(side=RIGHT,padx=100,pady=50)
-    # btn4 = Button(frame1, text="Next", command=to_map,font=myFont,fg="red",relief=SUNKEN).place(x=500,y=345)
-    # btn5 = Button(frame1, text="Back", command=to_map,fg="red",relief=SUNKEN).place(x=550,y=525)
+    
+    btn2 = Button(frame1, text="Direct Flight", font=myFont, command=to_map, fg="red", relief=SUNKEN)
+    btn2.place(x=500, y=275)
+    
+    btn3 = Button(frame1, text="More than one station", font=myFont, command=to_map1, fg="red", relief=SUNKEN)
+    btn3.place(x=500, y=310)
+    
     frame1.pack(fill='both', expand=1)
     forlogin.pack_forget()
     formap.pack_forget()
     map2.pack_forget()
-    
+
 def ticket():
     label1 = Label(book,image=photo3)
     label1.pack()
@@ -225,13 +227,13 @@ def to_map2():
     formap.pack_forget()
     map1.pack_forget()
     
-image1 = Image.open("C:\map1.jpg")
+image1 = Image.open("map.jpg")
 photo = ImageTk.PhotoImage(image1)
-image2 = Image.open("C:\image1.jpg")
+image2 = Image.open("image1.jpg")
 photo1 = ImageTk.PhotoImage(image2)
-image3 = Image.open("C:\SEM-3\DMGT\Practice\image3.jpg")
+image3 = Image.open("image3.jpg")
 photo2 = ImageTk.PhotoImage(image3)
-image4 = Image.open("C:\SEM-3\DMGT\Practice\image4.jpg")
+image4 = Image.open("image4.jpg")
 photo3 = ImageTk.PhotoImage(image4)
 namevalue1 = StringVar()
 namevalue2 = StringVar()
