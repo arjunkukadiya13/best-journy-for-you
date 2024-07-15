@@ -63,6 +63,15 @@ def choise():
     map2.pack_forget()
 
 def ticket():
+    """
+    Function to display the ticket booking screen where the user can enter travel details and proceed to payment.
+    
+    This function sets up the book window with a background image and several input fields for the user's travel information.
+    
+    Input: None
+    
+    Output: None, but it switches the displayed frame to book and hides the map2 frame.
+    """
     label1 = Label(book,image=photo3)
     label1.pack()
     my_list=data.datelist
