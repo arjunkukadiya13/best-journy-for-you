@@ -93,14 +93,29 @@ def ticket():
     
 def get_val():
 
-    # print(f"{namevalue1.get(),namevalue2.get()}")
+    """
+    Function to get the values entered by the user and check if the locations are valid.
+    
+    This function retrieves the values from namevalue1 and namevalue2, checks the validity of the locations using data.datacheck, and displays a message box if the locations are not found.
+    
+    Input: None, but it uses global variables namevalue1 and namevalue2 to get user input.
+    
+    Output: None, but it shows a message box if the locations are invalid.
+    """
     a=data.datacheck(namevalue1.get(),namevalue2.get())
     if a==False:
         tkinter.messagebox.showinfo("Best Journey for you","Sorry we can't Find the Location")
     
 def to_map():
-    # image1 = Image.open("C:\map1.jpg")
-    # # photo = ImageTk.PhotoImage(image1)
+    """
+    Function to set up and display the formap window with input fields and buttons for plotting a route.
+    
+    This function sets up the formap window with a background image, a canvas for drawing lines, input fields for 'From' and 'To' locations, and buttons to see the route or go back to the choice screen.
+    
+    Input: None, but it uses global variables namevalue1 and namevalue2 for user input.
+    
+    Output: None, but it switches the displayed frame to formap and hides other frames (frame1).
+    """
     label1 = Label(formap,image=photo)
     label1.pack()
     can_widget = Canvas(formap,width=1200,height=600)
@@ -117,8 +132,15 @@ def to_map():
     frame1.pack_forget()
     
 def to_map1():
-    # image1 = Image.open("C:\map1.jpg")
-    # # photo = ImageTk.PhotoImage(image1)
+    """
+    Function to set up and display the map1 window with input fields and buttons for plotting a route with stops.
+    
+    This function sets up the map1 window with a background image, a canvas for drawing lines, input fields for 'From', 'Stop', and 'To' locations, and buttons to see the route or go back to the choice screen.
+    
+    Input: None, but it uses global variables namevalue1, namevalue2, and namevalue5 for user input.
+    
+    Output: None, but it switches the displayed frame to map1 and hides other frames (frame1).
+    """
     label1 = Label(map1,image=photo)
     label1.pack()
     can_widget = Canvas(map1,width=1200,height=600)
@@ -138,6 +160,16 @@ def to_map1():
     
     
 def to_login():
+    """
+    Function to set up and display the forlogin window with a button to start the journey.
+    
+    This function sets up the forlogin window with a button that directs the user to the choice screen. It also hides other frames (formap).
+    
+    Input: None
+    
+    Output: None, but it switches the displayed frame to forlogin and hides other frames (formap).
+    """
+
    btn2 = Button(forlogin, text="Start Your Journey",font=myFont,command=choise,fg="red",relief=SUNKEN).place(x=550,y=525)
    forlogin.pack(fill='both', expand=1)
    formap.pack_forget()
